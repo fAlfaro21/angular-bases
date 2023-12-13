@@ -1,0 +1,18 @@
+<h1>DBZ Personajes</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <!-- Las llaves cuadradas nos permiten enviar, mediante inputs, ATRIBUTOS del pade al hijo -->
+    <!-- Los parentesis nos permiten escuchar la propiedad onDelete en el método onDeleteCharacter, a través del evento  -->
+    <dbz-list [characterList]="characters" (onDelete)="onDeleteCharacter($event)"></dbz-list>
+  </div>
+
+  <div class="col">
+
+    <!-- Este padre escucha el evento de creación de un personaje que envía el hijo,
+      por ello utilizo los () y la propiedad onNewCharacter dentro. Lo recibe como un event -->
+    <dbz-add-character (onNewCharacter)="onNewCharacter($event)" ></dbz-add-character>
+
+  </div>
+</div>
